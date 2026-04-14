@@ -1,0 +1,22 @@
+{
+  "name": "ဗေဒင်မေးကြမယ်",
+  "short_name": "ဗေဒင်",
+  "description": "တားရော့ကတ်များဖြင့် နေ့စဉ်ကံဇာတာကို အခမဲ့ စစ်ဆေးကြည့်ရှုနိုင်သော App",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#0f001a",
+  "theme_color": "#ffd700",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
