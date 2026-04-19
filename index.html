@@ -250,34 +250,96 @@
 
 <script>
     // --- Tarot Database with Warm Personality ---
-    const tarotData = {
-        "The Sun": {
-            img: "https://upload.wikimedia.org/wikipedia/commons/1/17/RWS_Tarot_19_Sun.jpg",
-            message: "ဒီနေ့မှာ 'The Sun' ကတ်ကြီး ထွက်လာတာ သိပ်ကံကောင်းတာပဲနော်။ သင့်ဘဝရဲ့ အမှောင်ထုတွေ ကုန်ဆုံးပြီး အောင်မြင်မှု အလင်းရောင်တွေ ရောက်လာတော့မှာပါ။ ကိုယ့်ကိုယ်ကိုယ် ယုံကြည်မှုအပြည့်နဲ့ ရှေ့ဆက်လိုက်ပါ။",
-            tip: "ဒီနေ့မှာ အဝါရောင် (Yellow) ဆောင်ထားရင် သင့်ရဲ့ စွမ်းအင်တွေ ပိုတက်ကြွနေမှာပါ။ ☀️"
-        },
-        "The Moon": {
-            img: "https://upload.wikimedia.org/wikipedia/commons/7/7f/RWS_Tarot_18_Moon.jpg",
-            message: "ဒီကတ်လေးက သင့်စိတ်ထဲမှာ မရေရာမှုလေးတွေ ရှိနေတာကို ပြနေပါတယ်။ ဒါပေမယ့် မစိုးရိမ်ပါနဲ့၊ ဒါဟာ အရာရာကို အရင်ကထက် ပိုသတိထားကြည့်ဖို့ သတိပေးတာပါ။ စိတ်အေးအေးထားပြီး ဆုံးဖြတ်ပါ။",
-            tip: "ဒီနေ့မှာ အပြာရောင် (Blue) လေးဆောင်ထားရင် စိတ်တည်ငြိမ်မှု ပိုရစေမှာပါ။ 🌙"
-        },
-        "The Lovers": {
-            img: "https://upload.wikimedia.org/wikipedia/commons/3/3a/RWS_Tarot_06_Lovers.jpg",
-            message: "ဒီနေ့ဟာ သင့်နှလုံးသားထဲမှာ အရေးကြီးတဲ့ ရွေးချယ်မှုတစ်ခု လုပ်ရတော့မယ့် အချိန်ပါ။ စိတ်ခံစားချက်နောက်ပဲ လိုက်မလား၊ သဘောတရားအတိုင်း ဆုံးဖြတ်မလားဆိုတာ သေချာစဉ်းစားဖို့ လိုပါလိမ့်မယ်။",
-            tip: "အချစ်ရေးအတွက် ကံကောင်းစေမယ့် အရောင်က ပန်းရောင် (Pink) လေးပါ။ 💖"
-        },
-        "The Tower": {
-            img: "https://upload.wikimedia.org/wikipedia/commons/5/53/RWS_Tarot_16_Tower.jpg",
-            message: "ဒီကတ်ထွက်လာလို့ လန့်မသွားပါနဲ့ဦးနော်။ တစ်ခါတလေမှာ ပိုကောင်းတဲ့ အသစ်တွေကို တည်ဆောက်ဖို့ အဟောင်းတွေကို ဖျက်ချရတတ်ပါတယ်။ ဒါဟာ ပိုကောင်းတဲ့လမ်းသစ်တစ်ခု ပေါ်လာဖို့ပဲ ဖြစ်ပါတယ်။ အားတင်းထားပါ။",
-            tip: "ဒီနေ့မှာ အဖြူရောင် (White) လေးဝတ်ထားရင် စိတ်အေးချမ်းမှု ရစေမှာပါ။ 🕊️"
-        },
-        "The World": {
-            img: "https://upload.wikimedia.org/wikipedia/commons/f/ff/RWS_Tarot_21_World.jpg",
-            message: "ဂုဏ်ယူပါတယ်! သင်ကြိုးစားထားသမျှတွေ အရာထင်ပြီး ပြီးပြည့်စုံတဲ့ အောင်မြင်မှုတစ်ခုကို ရရှိတော့မှာပါ။ သင့်ရဲ့ ခရီးစဉ်တစ်ခု ပြီးဆုံးပြီး လမ်းသစ်တွေ ပွင့်သွားပါပြီ။",
-            tip: "ဒီနေ့မှာ အစိမ်းရောင် (Green) လေးက သင့်ကို ကြွယ်ဝမှုတွေ ပေးပါလိမ့်မယ်။ 🌍"
-        }
-    };
+   const tarotData = {
+        // --- Major Arcana (22 Cards) ---
+        "The Fool": { img: "https://upload.wikimedia.org/wikipedia/commons/9/90/RWS_Tarot_00_Fool.jpg", message: "လမ်းသစ်ကို စတင်ပါ။", tip: "စွန့်စားပါ။" },
+        "The Magician": { img: "https://upload.wikimedia.org/wikipedia/commons/d/de/RWS_Tarot_01_Magician.jpg", message: "အရည်အချင်းကို အသုံးချပါ။", tip: "Focus ထားပါ။" },
+        "The High Priestess": { img: "https://upload.wikimedia.org/wikipedia/commons/8/88/RWS_Tarot_02_High_Priestess.jpg", message: "အတွင်းစိတ်ကို နားထောင်ပါ။", tip: "တိတ်ဆိတ်ပါ။" },
+        "The Empress": { img: "https://upload.wikimedia.org/wikipedia/commons/d/d2/RWS_Tarot_03_Empress.jpg", message: "ကြီးပွားခြင်းနဲ့ ပြည့်စုံခြင်း။", tip: "မိမိကိုယ်ကို ချစ်ပါ။" },
+        "The Emperor": { img: "https://upload.wikimedia.org/wikipedia/commons/c/c3/RWS_Tarot_04_Emperor.jpg", message: "တည်ငြိမ်မှုနဲ့ အာဏာ။", tip: "ခေါင်းဆောင်မှုယူပါ။" },
+        "The Hierophant": { img: "https://upload.wikimedia.org/wikipedia/commons/8/8d/RWS_Tarot_05_Hierophant.jpg", message: "သင်ခန်းစာအသစ် လေ့လာပါ။", tip: "အကြံဉာဏ်ရယူပါ။" },
+        "The Lovers": { img: "https://upload.wikimedia.org/wikipedia/commons/3/3a/RWS_Tarot_06_Lovers.jpg", message: "ရွေးချယ်မှုတစ်ခု လုပ်ရမည်။", tip: "နှလုံးသားကို နားထောင်ပါ။" },
+        "The Chariot": { img: "https://upload.wikimedia.org/wikipedia/commons/9/9b/RWS_Tarot_07_Chariot.jpg", message: "ဇွဲရှိလျှင် အောင်မြင်မည်။", tip: "အရှုံးမပေးပါနဲ့။" },
+        "Strength": { img: "https://upload.wikimedia.org/wikipedia/commons/f/f5/RWS_Tarot_08_Strength.jpg", message: "နူးညံ့ခြင်းက အင်အား။", tip: "စိတ်ရှည်ပါ။" },
+        "The Hermit": { img: "https://upload.wikimedia.org/wikipedia/commons/4/4d/RWS_Tarot_09_Hermit.jpg", message: "ကိုယ်ပိုင်အချိန်ယူပါ။", tip: "စဉ်းစားပါ။" },
+        "Wheel of Fortune": { img: "https://upload.wikimedia.org/wikipedia/commons/3/3c/RWS_Tarot_10_Wheel_of_Fortune.jpg", message: "ကံကြမ္မာ အလှည့်အပြောင်း။", tip: "အခွင့်အရေးယူပါ။" },
+        "Justice": { img: "https://upload.wikimedia.org/wikipedia/commons/e/e0/RWS_Tarot_11_Justice.jpg", message: "တရားမျှတမှု ရမည်။", tip: "ရိုးသားပါ။" },
+        "The Hanged Man": { img: "https://upload.wikimedia.org/wikipedia/commons/2/2b/RWS_Tarot_12_Hanged_Man.jpg", message: "ရှုထောင့်သစ်က ကြည့်ပါ။", tip: "အလျင်မလိုပါနဲ့။" },
+        "Death": { img: "https://upload.wikimedia.org/wikipedia/commons/d/d7/RWS_Tarot_13_Death.jpg", message: "အပြောင်းအလဲ စတင်ပါမည်။", tip: "ဟောင်းတာကို လွှတ်ပါ။" },
+        "Temperance": { img: "https://upload.wikimedia.org/wikipedia/commons/f/f8/RWS_Tarot_14_Temperance.jpg", message: "မျှတမှုရှိပါ။", tip: "စိတ်အေးအေးထားပါ။" },
+        "The Devil": { img: "https://upload.wikimedia.org/wikipedia/commons/5/55/RWS_Tarot_15_Devil.jpg", message: "စွဲလမ်းမှုကို သတိထားပါ။", tip: "လွတ်လပ်မှုကို ရှာပါ။" },
+        "The Tower": { img: "https://upload.wikimedia.org/wikipedia/commons/5/53/RWS_Tarot_16_Tower.jpg", message: "မမျှော်လင့်တဲ့ အပြောင်းအလဲ။", tip: "သတ္တိရှိပါ။" },
+        "The Star": { img: "https://upload.wikimedia.org/wikipedia/commons/d/db/RWS_Tarot_17_Star.jpg", message: "မျှော်လင့်ချက်တွေ ရမည်။", tip: "ယုံကြည်ပါ။" },
+        "The Moon": { img: "https://upload.wikimedia.org/wikipedia/commons/7/7f/RWS_Tarot_18_Moon.jpg", message: "စိတ်ရှုပ်ထွေးမှု သတိထားပါ။", tip: "အမှန်တရားရှာပါ။" },
+        "The Sun": { img: "https://upload.wikimedia.org/wikipedia/commons/1/17/RWS_Tarot_19_Sun.jpg", message: "အောင်မြင်မှုနဲ့ ပျော်ရွှင်မှု။", tip: "တောက်ပနေပါ။" },
+        "Judgement": { img: "https://upload.wikimedia.org/wikipedia/commons/d/dd/RWS_Tarot_20_Judgement.jpg", message: "ဆုံးဖြတ်ချက် ခိုင်မာပါစေ။", tip: "အမှားပြင်ပါ။" },
+        "The World": { img: "https://upload.wikimedia.org/wikipedia/commons/f/ff/RWS_Tarot_21_World.jpg", message: "ပြီးပြည့်စုံတဲ့ အောင်မြင်မှု။", tip: "အောင်ပွဲခံပါ။" },
 
+        // --- Minor Arcana (56 Cards Simplified Structure) ---
+        // Suit of Cups (14 Cards)
+        "Ace of Cups": { img: "https://upload.wikimedia.org/wikipedia/commons/3/36/Cups01.jpg", message: "အချစ်သစ် ပွင့်လန်းမည်။", tip: "ခံစားချက်ကို ဖွင့်ပါ။" },
+        "Two of Cups": { img: "https://upload.wikimedia.org/wikipedia/commons/f/f8/Cups02.jpg", message: "နှစ်ဦးသား ဆက်ဆံရေးကောင်း။", tip: "ယုံကြည်ပါ။" },
+        "Three of Cups": { img: "https://upload.wikimedia.org/wikipedia/commons/7/7a/Cups03.jpg", message: "ပျော်ရွှင်စရာ အခမ်းအနား။", tip: "သူငယ်ချင်းနဲ့ ပျော်ပါ။" },
+        "Four of Cups": { img: "https://upload.wikimedia.org/wikipedia/commons/3/35/Cups04.jpg", message: "မကျေနပ်ချက်များ ရှိမည်။", tip: "အခွင့်အရေးရှာပါ။" },
+        "Five of Cups": { img: "https://upload.wikimedia.org/wikipedia/commons/d/d7/Cups05.jpg", message: "အတိတ်ကို ပူဆွေးနေမည်။", tip: "ရှေ့ဆက်ပါ။" },
+        "Six of Cups": { img: "https://upload.wikimedia.org/wikipedia/commons/1/17/Cups06.jpg", message: "အတိတ်က မိတ်ဆွေဟောင်း။", tip: "အမှတ်တရတွေကို မြတ်နိုးပါ။" },
+        "Seven of Cups": { img: "https://upload.wikimedia.org/wikipedia/commons/a/ae/Cups07.jpg", message: "ရွေးချယ်စရာ များနေမည်။", tip: "လက်တွေ့ကျပါ။" },
+        "Eight of Cups": { img: "https://upload.wikimedia.org/wikipedia/commons/6/60/Cups08.jpg", message: "အရာဟောင်းတွေကို စွန့်ခွာပါ။", tip: "သတ္တိရှိပါ။" },
+        "Nine of Cups": { img: "https://upload.wikimedia.org/wikipedia/commons/2/24/Cups09.jpg", message: "ဆန္ဒပြည့်ဝမည်။", tip: "ကျေးဇူးတင်ပါ။" },
+        "Ten of Cups": { img: "https://upload.wikimedia.org/wikipedia/commons/8/84/Cups10.jpg", message: "မိသားစု ပျော်ရွှင်မှု။", tip: "ချစ်ခင်ပါ။" },
+        "Page of Cups": { img: "https://upload.wikimedia.org/wikipedia/commons/a/ad/Cups11.jpg", message: "သတင်းကောင်း ရမည်။", tip: "စိတ်ကူးယဉ်ပါ။" },
+        "Knight of Cups": { img: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Cups12.jpg", message: "အချစ်ကမ်းလှမ်းမှု။", tip: "နူးညံ့ပါ။" },
+        "Queen of Cups": { img: "https://upload.wikimedia.org/wikipedia/commons/6/62/Cups13.jpg", message: "နွေးထွေးသော အကူအညီ။", tip: "ဂရုစိုက်ပါ။" },
+        "King of Cups": { img: "https://upload.wikimedia.org/wikipedia/commons/0/04/Cups14.jpg", message: "စိတ်ခံစားချက်ကို ထိန်းပါ။", tip: "တည်ငြိမ်ပါ။" },
+
+        // Suit of Swords (14 Cards)
+        "Ace of Swords": { img: "https://upload.wikimedia.org/wikipedia/commons/1/1a/Swords01.jpg", message: "ရှင်းလင်းသော အတွေး။", tip: "အမှန်ကို ပြောပါ။" },
+        "Two of Swords": { img: "https://upload.wikimedia.org/wikipedia/commons/9/9e/Swords02.jpg", message: "ဆုံးဖြတ်ချက် ခက်ခဲမည်။", tip: "ချိန်ဆပါ။" },
+        "Three of Swords": { img: "https://upload.wikimedia.org/wikipedia/commons/0/02/Swords03.jpg", message: "စိတ်ထိခိုက်မှု။", tip: "သည်းခံပါ။" },
+        "Four of Swords": { img: "https://upload.wikimedia.org/wikipedia/commons/b/bf/Swords04.jpg", message: "အနားယူရန် လိုအပ်။", tip: "ငြိမ်သက်ပါ။" },
+        "Five of Swords": { img: "https://upload.wikimedia.org/wikipedia/commons/2/23/Swords05.jpg", message: "ပဋိပက္ခ သတိထားပါ။", tip: "စကားပြော ဆင်ခြင်ပါ။" },
+        "Six of Swords": { img: "https://upload.wikimedia.org/wikipedia/commons/2/29/Swords06.jpg", message: "ခက်ခဲမှုကျော်လွှားမည်။", tip: "ပြောင်းလဲပါ။" },
+        "Seven of Swords": { img: "https://upload.wikimedia.org/wikipedia/commons/3/34/Swords07.jpg", message: "လှည့်စားမှု သတိထားပါ။", tip: "သတိရှိပါ။" },
+        "Eight of Swords": { img: "https://upload.wikimedia.org/wikipedia/commons/a/a7/Swords08.jpg", message: "ကိုယ်ကိုကိုယ် ကန့်သတ်ခြင်း။", tip: "လွတ်မြောက်ပါ။" },
+        "Nine of Swords": { img: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Swords09.jpg", message: "စိုးရိမ်ပူပန်မှု။", tip: "အိပ်စက်ပါ။" },
+        "Ten of Swords": { img: "https://upload.wikimedia.org/wikipedia/commons/d/d4/Swords10.jpg", message: "အဆုံးသတ်တစ်ခု။", tip: "ပြန်စပါ။" },
+        "Page of Swords": { img: "https://upload.wikimedia.org/wikipedia/commons/4/4c/Swords11.jpg", message: "သတင်းအချက်အလက်။", tip: "လေ့လာပါ။" },
+        "Knight of Swords": { img: "https://upload.wikimedia.org/wikipedia/commons/b/b0/Swords12.jpg", message: "မြန်ဆန်သော လုပ်ဆောင်ချက်။", tip: "အရှိန်တင်ပါ။" },
+        "Queen of Swords": { img: "https://upload.wikimedia.org/wikipedia/commons/d/d4/Swords13.jpg", message: "ပညာရှိသော ဆုံးဖြတ်။", tip: "ယုတ္တိရှိပါ။" },
+        "King of Swords": { img: "https://upload.wikimedia.org/wikipedia/commons/3/33/Swords14.jpg", message: "ခေါင်းဆောင်မှု။", tip: "တရားမျှတပါ။" },
+
+        // Suit of Wands (14 Cards)
+        "Ace of Wands": { img: "https://upload.wikimedia.org/wikipedia/commons/f/f6/Wands01.jpg", message: "စွမ်းအင်သစ်များ။", tip: "စတင်ပါ။" },
+        "Two of Wands": { img: "https://upload.wikimedia.org/wikipedia/commons/8/80/Wands02.jpg", message: "အစီအစဉ်ဆွဲပါ။", tip: "မျှော်မှန်းပါ။" },
+        "Three of Wands": { img: "https://upload.wikimedia.org/wikipedia/commons/f/ff/Wands03.jpg", message: "အောင်မြင်မှု တိုးတက်မည်။", tip: "စောင့်ပါ။" },
+        "Four of Wands": { img: "https://upload.wikimedia.org/wikipedia/commons/c/cf/Wands04.jpg", message: "အိမ်ထောင်ရေး/ပျော်ရွှင်မှု။", tip: "အခမ်းအနားလုပ်ပါ။" },
+        "Five of Wands": { img: "https://upload.wikimedia.org/wikipedia/commons/5/56/Wands05.jpg", message: "ပြိုင်ဆိုင်မှုရှိမည်။", tip: "ကြိုးစားပါ။" },
+        "Six of Wands": { img: "https://upload.wikimedia.org/wikipedia/commons/3/36/Wands06.jpg", message: "အောင်ပွဲခံမည်။", tip: "ယုံကြည်ပါ။" },
+        "Seven of Wands": { img: "https://upload.wikimedia.org/wikipedia/commons/9/9c/Wands07.jpg", message: "ခုခံကာကွယ်ပါ။", tip: "မလျှော့ပါနဲ့။" },
+        "Eight of Wands": { img: "https://upload.wikimedia.org/wikipedia/commons/a/a2/Wands08.jpg", message: "အရာရာ မြန်ဆန်မည်။", tip: "အဆင်သင့်ဖြစ်ပါ။" },
+        "Nine of Wands": { img: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Wands09.jpg", message: "ဇွဲရှိပါ။", tip: "ရပ်တည်ပါ။" },
+        "Ten of Wands": { img: "https://upload.wikimedia.org/wikipedia/commons/e/e4/Wands10.jpg", message: "တာဝန်များလွန်းမည်။", tip: "အကူအညီတောင်းပါ။" },
+        "Page of Wands": { img: "https://upload.wikimedia.org/wikipedia/commons/6/6a/Wands11.jpg", message: "စိတ်ကူးသစ်။", tip: "စူးစမ်းပါ။" },
+        "Knight of Wands": { img: "https://upload.wikimedia.org/wikipedia/commons/1/16/Wands12.jpg", message: "စွန့်စားမှု။", tip: "လှုပ်ရှားပါ။" },
+        "Queen of Wands": { img: "https://upload.wikimedia.org/wikipedia/commons/0/0d/Wands13.jpg", message: "ယုံကြည်မှု။", tip: "တောက်ပပါ။" },
+        "King of Wands": { img: "https://upload.wikimedia.org/wikipedia/commons/c/ce/Wands14.jpg", message: "ဦးဆောင်သူ။", tip: "အောင်မြင်ပါ။" },
+
+        // Suit of Pentacles (14 Cards)
+        "Ace of Pentacles": { img: "https://upload.wikimedia.org/wikipedia/commons/f/fd/Pents01.jpg", message: "ငွေကြေး အခွင့်အရေး။", tip: "ရင်းနှီးမြှုပ်နှံပါ။" },
+        "Two of Pentacles": { img: "https://upload.wikimedia.org/wikipedia/commons/9/9f/Pents02.jpg", message: "ချိန်ညှိမှု လိုအပ်မည်။", tip: "ဟန်ချက်ညီပါ။" },
+        "Three of Pentacles": { img: "https://upload.wikimedia.org/wikipedia/commons/4/42/Pents03.jpg", message: "အဖွဲ့အစည်းနှင့် အလုပ်။", tip: "ပူးပေါင်းပါ။" },
+        "Four of Pentacles": { img: "https://upload.wikimedia.org/wikipedia/commons/3/35/Pents04.jpg", message: "စုဆောင်းမှု။", tip: "သတိထားသုံးပါ။" },
+        "Five of Pentacles": { img: "https://upload.wikimedia.org/wikipedia/commons/9/96/Pents05.jpg", message: "ငွေကြေး အခက်အခဲ။", tip: "အကူအညီယူပါ။" },
+        "Six of Pentacles": { img: "https://upload.wikimedia.org/wikipedia/commons/a/a6/Pents06.jpg", message: "ပေးကမ်းခြင်း။", tip: "မျှဝေပါ။" },
+        "Seven of Pentacles": { img: "https://upload.wikimedia.org/wikipedia/commons/6/6a/Pents07.jpg", message: "ရိတ်သိမ်းချိန်။", tip: "စောင့်ပါ။" },
+        "Eight of Pentacles": { img: "https://upload.wikimedia.org/wikipedia/commons/4/49/Pents08.jpg", message: "ကျွမ်းကျင်မှု။", tip: "လေ့ကျင့်ပါ။" },
+        "Nine of Pentacles": { img: "https://upload.wikimedia.org/wikipedia/commons/f/f0/Pents09.jpg", message: "ဇိမ်ခံခြင်း။", tip: "ခံစားပါ။" },
+        "Ten of Pentacles": { img: "https://upload.wikimedia.org/wikipedia/commons/4/42/Pents10.jpg", message: "မိသားစု ချမ်းသာမှု။", tip: "အမွေအနှစ်။" },
+        "Page of Pentacles": { img: "https://upload.wikimedia.org/wikipedia/commons/e/ec/Pents11.jpg", message: "သင်ယူမှု။", tip: "စတင်ပါ။" },
+        "Knight of Pentacles": { img: "https://upload.wikimedia.org/wikipedia/commons/d/d3/Pents12.jpg", message: "တည်ငြိမ်မှု။", tip: "လုပ်ဆောင်ပါ။" },
+        "Queen of Pentacles": { img: "https://upload.wikimedia.org/wikipedia/commons/8/88/Pents13.jpg", message: "ကြွယ်ဝမှု။", tip: "သဘာဝတရား။" },
+        "King of Pentacles": { img: "https://upload.wikimedia.org/wikipedia/commons/1/1c/Pents14.jpg", message: "ဘဏ္ဍာရေး အောင်မြင်။", tip: "လုံခြုံပါ။" }
+    };
     const moods = ['High ✨', 'Peaceful 🧘', 'Powerful 🔥', 'Mystic 🌙', 'Blessed 🙏'];
     const colorList = ['#ffd700', '#ff4d4d', '#4dff88', '#4d94ff', '#e066ff'];
 
